@@ -36,7 +36,6 @@ namespace CheeseMVC.Controllers
                 CheeseCategory newCategory = new CheeseCategory()
                 {
                     Name = addCategory.Name
-
                 };
 
                 context.Categories.Add(newCategory);
