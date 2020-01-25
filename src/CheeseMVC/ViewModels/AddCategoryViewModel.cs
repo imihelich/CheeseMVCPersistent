@@ -14,5 +14,11 @@ namespace CheeseMVC.ViewModels
         [Display(Name = "Category Name")]
         public string Name { get; set; }
 
+        public AddCategoryViewModel()
+        {
+
+        }
+
+
     }
 }

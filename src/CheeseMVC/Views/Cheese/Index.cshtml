@@ -2,23 +2,24 @@
 
 <h1>@ViewBag.Title</h1>
 
-<table class="table">
-
-    <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <td>Type</td>
-    </tr>
-
-    @foreach (var cheese in Model)
-    {
+@foreach (CheeseMVC.Models.Cheese cheese in Model)
+{
+    <table class="table">
         <tr>
+            <th>Name:</th>
             <td>@cheese.Name</td>
-            <td>@cheese.Description</td>
-            <td>@cheese.Type</td>
         </tr>
-    }
-</table>
+        <tr>
+            <th>Description:</th>
+            <td>@cheese.Description</td>
+        </tr>
+        <tr>
+            <th>Category:</th>
+            <td>@cheese.CategoryID</td>
+        </tr>
+
+    </table>
+}
 
 @if (Model.Count == 0)
 {

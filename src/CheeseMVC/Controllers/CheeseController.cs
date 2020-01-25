@@ -9,7 +9,7 @@ namespace CheeseMVC.Controllers
 {
     public class CheeseController : Controller
     {
-        private CheeseDbContext context;
+        private readonly CheeseDbContext context;
 
         public CheeseController(CheeseDbContext dbContext)
         {
@@ -40,12 +40,11 @@ namespace CheeseMVC.Controllers
                 {
                     Name = addCheeseViewModel.Name,
                     Description = addCheeseViewModel.Description,
-                    Type = addCheeseViewModel.Type
+                    Category = context.Categories.Find(addCheeseViewModel.CategoryID)
                 };
 
                 context.Cheeses.Add(newCheese);
                 context.SaveChanges();
-
                 return Redirect("/Cheese");
             }
 
